@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct ProfilePageView: View {
+    @StateObject private var viewModel = ItemsPageViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                
+            }
+            .navigationTitle("Your Inventory")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .imageScale(.large)
+                            .bold()
+                    }
+
+                }
+            }
+        }
     }
 }
 

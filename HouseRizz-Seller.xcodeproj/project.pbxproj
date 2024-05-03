@@ -28,6 +28,8 @@
 		CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */; };
 		CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */; };
 		CC58D8D92BE5058D00F873CB /* CKUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D82BE5058D00F873CB /* CKUtility.swift */; };
+		CC58D8DB2BE508CA00F873CB /* ItemsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */; };
+		CC58D8DD2BE50A4A00F873CB /* HRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageView.swift; sourceTree = "<group>"; };
 		CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPageView.swift; sourceTree = "<group>"; };
 		CC58D8D82BE5058D00F873CB /* CKUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKUtility.swift; sourceTree = "<group>"; };
+		CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageViewModel.swift; sourceTree = "<group>"; };
+		CC58D8DC2BE50A4A00F873CB /* HRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3580092BE11EB50056E300 /* Authentication.swift */,
+				CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3580202BE11F970056E300 /* HRUser.swift */,
+				CC58D8DC2BE50A4A00F873CB /* HRModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 			files = (
 				CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */,
 				CC58D8D32BE4F7E300F873CB /* ProfilePageView.swift in Sources */,
+				CC58D8DB2BE508CA00F873CB /* ItemsPageViewModel.swift in Sources */,
 				CC3580272BE11FF40056E300 /* LoginView.swift in Sources */,
 				CC3580292BE120170056E300 /* HRButton.swift in Sources */,
 				CC357FFD2BE11B1A0056E300 /* MainView.swift in Sources */,
@@ -248,6 +255,7 @@
 				CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */,
 				CC3580212BE11F970056E300 /* HRUser.swift in Sources */,
 				CC357FFB2BE11B1A0056E300 /* HouseRizz_SellerApp.swift in Sources */,
+				CC58D8DD2BE50A4A00F873CB /* HRModel.swift in Sources */,
 				CC35800A2BE11EB50056E300 /* Authentication.swift in Sources */,
 				CC58D8D92BE5058D00F873CB /* CKUtility.swift in Sources */,
 			);
