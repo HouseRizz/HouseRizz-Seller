@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct ItemsPageView: View {
+    @StateObject private var viewModel = ItemsPageViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Text("Add")
+            }
+            .navigationTitle("Your Inventory")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        AddItemView()
+                            .toolbarRole(.editor)
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .imageScale(.large)
+                            .bold()
+                    }
+
+                }
+            }
+        }
     }
 }
 
