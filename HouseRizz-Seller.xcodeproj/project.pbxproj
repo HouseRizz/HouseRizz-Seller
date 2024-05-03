@@ -24,6 +24,9 @@
 		CC3580272BE11FF40056E300 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3580262BE11FF40056E300 /* LoginView.swift */; };
 		CC3580292BE120170056E300 /* HRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3580282BE120160056E300 /* HRButton.swift */; };
 		CC35802C2BE121AC0056E300 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC35802B2BE121AC0056E300 /* GoogleService-Info.plist */; };
+		CC58D8D32BE4F7E300F873CB /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */; };
+		CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */; };
+		CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		CC35802B2BE121AC0056E300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC35802D2BE121BE0056E300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CC35802E2BE121CB0056E300 /* HouseRizz-Seller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HouseRizz-Seller.entitlements"; sourceTree = "<group>"; };
+		CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageView.swift; sourceTree = "<group>"; };
+		CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 			children = (
 				CC3580262BE11FF40056E300 /* LoginView.swift */,
 				CC357FFC2BE11B1A0056E300 /* MainView.swift */,
+				CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */,
+				CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */,
+				CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,10 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */,
+				CC58D8D32BE4F7E300F873CB /* ProfilePageView.swift in Sources */,
 				CC3580272BE11FF40056E300 /* LoginView.swift in Sources */,
 				CC3580292BE120170056E300 /* HRButton.swift in Sources */,
 				CC357FFD2BE11B1A0056E300 /* MainView.swift in Sources */,
 				CC3580252BE11FC30056E300 /* Extensions.swift in Sources */,
+				CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */,
 				CC3580212BE11F970056E300 /* HRUser.swift in Sources */,
 				CC357FFB2BE11B1A0056E300 /* HouseRizz_SellerApp.swift in Sources */,
 				CC35800A2BE11EB50056E300 /* Authentication.swift in Sources */,
