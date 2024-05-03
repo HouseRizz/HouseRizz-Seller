@@ -39,7 +39,6 @@ struct LoginView: View {
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .submitLabel(.next)
-                
             }
             .padding(.vertical, 6)
             .background(Divider(), alignment: .bottom)

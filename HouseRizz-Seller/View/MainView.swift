@@ -12,17 +12,30 @@ struct MainView: View {
     
     var body: some View {
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-            }
-            .padding()
+            accountView
         } else {
             LoginView()
         }
-        
+    }
+    
+    @ViewBuilder
+    var accountView: some View {
+        NavigationStack{
+            ZStack{
+                TabView {
+                    Group {
+                        ItemsPageView()
+                            .tabItem { Label("Items", systemImage: "list.bullet")}
+                        OrdersPageView()
+                            .tabItem { Label("Orders", systemImage: "bag") }
+                        ProfilePageView()
+                            .tabItem { Label("Profile", systemImage: "person") }
+                    }
+                }
+            }
+            .navigationTitle("HouseRizz Seller")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
