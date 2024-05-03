@@ -11,16 +11,15 @@ import PhotosUI
 struct AddItemView: View {
     @StateObject private var viewModel = AddItemViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
-    @State private var selectedPhotoData = [Data]()
     
     var body: some View {
         NavigationStack {
             VStack {
-                if selectedPhotoData.count > 0 {
+                if viewModel.selectedPhotoData.count > 0 {
                     ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(0..<selectedPhotoData.count, id: \.self) { index in
-                                Image(uiImage: UIImage(data: selectedPhotoData[index])!)
+                            ForEach(0..<viewModel.selectedPhotoData.count, id: \.self) { index in
+                                Image(uiImage: UIImage(data: viewModel.selectedPhotoData[index])!)
                                     .resizable()
                                     .frame(width: 200, height: 200)
                                     .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -41,10 +40,10 @@ struct AddItemView: View {
                 }
                 .onChange(of: photoPickerItems) {
                     Task {
-                        selectedPhotoData.removeAll()
+                        viewModel.selectedPhotoData.removeAll()
                         for item in photoPickerItems {
                             if let imageData = try await item.loadTransferable(type: Data.self) {
-                                selectedPhotoData.append(imageData)
+                                viewModel.selectedPhotoData.append(imageData)
                             }
                         }
                     }
@@ -79,7 +78,7 @@ struct AddItemView: View {
                 Spacer()
                 
                 HRButton(label: "Add") {
-                   
+                    viewModel.addButtonPressed()
                 }
                 .padding(.bottom, 20)
             }

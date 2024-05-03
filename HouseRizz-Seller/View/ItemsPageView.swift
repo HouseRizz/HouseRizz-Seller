@@ -13,7 +13,9 @@ struct ItemsPageView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Add")
+                Text("Is Signed in: \(viewModel.isSignedInToiCloud)")
+                Text("Permission: \(viewModel.permissionStatus)")
+                Text("Name: \(viewModel.userName)")
             }
             .navigationTitle("Your Inventory")
             .navigationBarTitleDisplayMode(.inline)

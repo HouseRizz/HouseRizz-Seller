@@ -17,7 +17,7 @@ struct CKItemModelName {
     static let itemRecord = "Items"
 }
 
-struct HRModel: Hashable, CKitableProtocol {
+struct HRSellItem: Hashable, CKitableProtocol {
     let name: String
     let description: String?
     let price: Int?
@@ -51,9 +51,9 @@ struct HRModel: Hashable, CKitableProtocol {
         self.init(record: record)
     }
     
-    func update(newName: String) -> HRModel? {
+    func update(newName: String) -> HRSellItem? {
         let record = record
         record[CKItemModelName.name] = newName
-        return HRModel(record: record)
+        return HRSellItem(record: record)
     }
 }
