@@ -71,3 +71,25 @@ struct HRProduct: Hashable, CKitableProtocol {
         return HRProduct(record: record)
     }
 }
+
+enum Category: CaseIterable {
+    case sofa
+    case bed
+    case chair
+    case tv
+    
+    var id: Self { self }
+        
+    var title: String {
+        switch self {
+        case .sofa:
+            return "Sofa"
+        case .bed:
+            return "Bed"
+        case .chair:
+            return "Chair"
+        case .tv:
+            return "TV"
+        }
+    }
+}

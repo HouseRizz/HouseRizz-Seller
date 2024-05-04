@@ -15,6 +15,7 @@ class AddProductViewModel: ObservableObject {
     @Published var price: Int = 0
     @Published var imageURL: String = ""
     @Published var category: String = ""
+    @Published var selectedCategory: Category = .sofa
     @Published var supplier: String = ""
     @Published var items: [HRProduct] = []
     @Published var selectedPhotoData = [Data]()
@@ -38,7 +39,7 @@ class AddProductViewModel: ObservableObject {
         
         do {
             try data.write(to: url)
-            guard let newItem = HRProduct(name: name, description: description, price: price, imageURL: url, category: category, supplier: supplier) else {return}
+            guard let newItem = HRProduct(name: name, description: description, price: price, imageURL: url, category: selectedCategory.title, supplier: supplier) else {return}
             CKUtility.add(item: newItem) { result in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.name = ""

@@ -36,7 +36,7 @@ struct AddProductView: View {
                 
                 PhotosPicker(selection: $photoPickerItems, maxSelectionCount: 1, matching: .images) {
                     Text("Edit Photos")
-                        .padding(.top,20)
+                        .padding(.top,10)
                 }
                 .onChange(of: photoPickerItems) {
                     Task {
@@ -57,23 +57,35 @@ struct AddProductView: View {
                         .lineLimit(2...15)
                         .textFieldStyle(.roundedBorder)
                     
-                    TextField("Category", text: $viewModel.category)
-                        .textFieldStyle(.roundedBorder)
-
-                    HStack {
-                        Text("Set Price (₹) :")
-                                                
-                        TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
+                    HStack(spacing: 20) {
+                        HStack {
+                            Text("Set Price (₹) :")
+                                                    
+                            TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
+                        }
+                        
+                        Picker("Category", selection: $viewModel.selectedCategory) {
+                            ForEach(Category.allCases, id: \.self) {
+                                Text($0.title)
+                            }
+                        }
                     }
                     
-                    HStack {
-                        Text("Add 3D Model (Optional) :")
-                         
-                        Button {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Add 3D Model")
                             
-                        } label: {
-                            Text("Model Name")
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("Select/Make Model")
+                            }
                         }
+                        
+                        Text("Optional")
+                            .foregroundStyle(.gray)
                     }
                 }
                 .padding(.top,50)
