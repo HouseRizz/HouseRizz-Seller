@@ -10,15 +10,30 @@ import SwiftUI
 struct ProductsPageView: View {
     @StateObject private var viewModel = ProductsPageViewModel()
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @State private var showDeleteOption: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(viewModel.items, id: \.self) { item in
-                            NavigationLink(destination: ProductDetailsView(item: item).toolbarRole(.editor)) {
-                                HRProductCardView(item: item)
+                        ForEach(viewModel.items.indices, id: \.self) { index in
+                            NavigationLink(destination: ProductDetailsView(item:viewModel.items[index])
+                                                            .toolbarRole(.editor))
+                            {
+                                ZStack(alignment: .topLeading) {
+                                    HRProductCardView(item: viewModel.items[index])
+                                    
+                                    Image(systemName: "minus.circle.fill")
+                                        .imageScale(.large)
+                                        .bold()
+                                        .foregroundStyle(.red)
+                                        .opacity(showDeleteOption ? 1.0 : 0.0)
+                                        .padding(.top,20)
+                                        .onTapGesture {
+                                            viewModel.deleteItem(indexSet: IndexSet(integer: index))
+                                        }
+                                }
                             }
                         }
                     }
@@ -40,7 +55,16 @@ struct ProductsPageView: View {
                             .imageScale(.large)
                             .bold()
                     }
-                    
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showDeleteOption.toggle()
+                    } label: {
+                        Image(systemName: showDeleteOption ? "minus.circle.fill": "minus.circle" )
+                            .imageScale(.large)
+                            .bold()
+                            .foregroundStyle(.red)
+                    }
                 }
             }
         }

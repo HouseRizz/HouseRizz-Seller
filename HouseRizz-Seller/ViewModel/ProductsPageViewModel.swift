@@ -77,10 +77,34 @@ class ProductsPageViewModel: ObservableObject {
         let recordType = "Items"
         CKUtility.fetch(predicate: predicate, recordType: recordType, sortDescription: [NSSortDescriptor(key: "name", ascending: true)])
             .receive(on: DispatchQueue.main)
-            .sink { _ in
-                
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.error = error.localizedDescription
+                }
             } receiveValue: { [weak self] returnedItems in
                 self?.items = returnedItems
+            }
+            .store(in: &cancellables)
+    }
+    
+    func deleteItem(indexSet: IndexSet) {
+        guard let index = indexSet.first else {return}
+        let item = items[index]
+        let record = item.record
+        CKUtility.delete(item: item)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { [weak self] success in
+                self?.items.remove(at: index)
             }
             .store(in: &cancellables)
     }
