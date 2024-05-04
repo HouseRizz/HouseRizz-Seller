@@ -13,12 +13,16 @@ class AddProductViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var description: String = ""
     @Published var price: Int = 0
-    @Published var imageURL: String = ""
+    @Published var imageURL1: String = ""
+    @Published var imageURL2: String = ""
+    @Published var imageURL3: String = ""
     @Published var category: String = ""
     @Published var selectedCategory: Category = .sofa
     @Published var supplier: String = ""
     @Published var items: [HRProduct] = []
     @Published var selectedPhotoData = [Data]()
+    var urls: [URL] = []
+    var errors: [Error] = []
     var cancellables = Set<AnyCancellable>()
     
     init(){
@@ -28,25 +32,45 @@ class AddProductViewModel: ObservableObject {
     func addButtonPressed(){
         guard !name.isEmpty else {return}
         addItem(name: name)
-    
+        
     }
     
-    private func addItem(name:String) {
-        guard
-            let image =  UIImage(data: selectedPhotoData[0]),
-            let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("photo.jpg"),
-            let data = image.jpegData(compressionQuality: 1.0) else {return}
+    private func addItem(name: String) {
+        guard !selectedPhotoData.isEmpty else {
+            error = "Please select at least one image"
+            return
+        }
         
-        do {
-            try data.write(to: url)
-            guard let newItem = HRProduct(name: name, description: description, price: price, imageURL: url, category: selectedCategory.title, supplier: supplier) else {return}
-            CKUtility.add(item: newItem) { result in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.name = ""
-                }
+        for (index, imageData) in selectedPhotoData.enumerated() {
+            guard let image = UIImage(data: imageData),
+                  let url = FileManager
+                                .default
+                                .urls(for: .cachesDirectory, in: .userDomainMask)
+                                .first?.appendingPathComponent("photo\(index + 1).jpg"),
+                  let data = image.jpegData(compressionQuality: 1.0) else { continue }
+            
+            do {
+                try data.write(to: url)
+                urls.append(url)
+            } catch {
+                errors.append(error)
             }
-        } catch let error {
-            print(error)
+        }
+        
+        if !errors.isEmpty {
+            error = errors.map { $0.localizedDescription }.joined(separator: "\n")
+            return
+        }
+        
+        guard let newItem = HRProduct(name: name, description: description, price: price, imageURL1: urls.count > 0 ? urls[0] : nil, imageURL2: urls.count > 1 ? urls[1] : nil, imageURL3: urls.count > 2 ? urls[2] : nil, category: selectedCategory.title, supplier: supplier) else {
+            error = "Error creating item"
+            return
+        }
+        
+        CKUtility.add(item: newItem) { result in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.name = ""
+            }
         }
     }
     

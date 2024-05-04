@@ -34,7 +34,7 @@ struct AddProductView: View {
                         .padding()
                 }
                 
-                PhotosPicker(selection: $photoPickerItems, maxSelectionCount: 1, matching: .images) {
+                PhotosPicker(selection: $photoPickerItems, maxSelectionCount: 3, matching: .images) {
                     Text("Edit Photos")
                         .padding(.top,10)
                 }

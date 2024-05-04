@@ -14,7 +14,9 @@ struct CKItemModelName {
     static let category = "category"
     static let supplier = "supplier"
     static let price = "price"
-    static let imageURL = "imageURL"
+    static let imageURL1 = "imageURL1"
+    static let imageURL2 = "imageURL2"
+    static let imageURL3 = "imageURL3"
     static let modelURL = "modelURL"
     static let itemRecord = "Items"
 }
@@ -25,7 +27,9 @@ struct HRProduct: Hashable, CKitableProtocol {
     let description: String?
     let supplier: String
     let price: Int?
-    let imageURL: URL?
+    let imageURL1: URL?
+    let imageURL2: URL?
+    let imageURL3: URL?
     //let modelURL: URL?
     let record: CKRecord
     
@@ -40,14 +44,18 @@ struct HRProduct: Hashable, CKitableProtocol {
         self.supplier = supplier
         guard let price = record[CKItemModelName.price] as? Int else {return nil}
         self.price = price
-        let imageAsset = record[CKItemModelName.imageURL] as? CKAsset
-        self.imageURL = imageAsset?.fileURL
+        let imageAsset1 = record[CKItemModelName.imageURL1] as? CKAsset
+        self.imageURL1 = imageAsset1?.fileURL
+        let imageAsset2 = record[CKItemModelName.imageURL2] as? CKAsset
+        self.imageURL2 = imageAsset2?.fileURL
+        let imageAsset3 = record[CKItemModelName.imageURL3] as? CKAsset
+        self.imageURL3 = imageAsset3?.fileURL
 //        let modelURL = record[CKItemModelName.modelURL] as? CKAsset
 //        self.modelURL = modelURL?.fileURL
         self.record = record
     }
     
-    init?(name: String, description: String?, price: Int?, imageURL: URL?, category: String?, supplier: String?) {
+    init?(name: String, description: String?, price: Int?, imageURL1: URL?, imageURL2: URL?, imageURL3: URL?, category: String?, supplier: String?) {
         let record = CKRecord(recordType: CKItemModelName.itemRecord)
         record[CKItemModelName.name] = name
         record[CKItemModelName.description] = description
@@ -58,17 +66,19 @@ struct HRProduct: Hashable, CKitableProtocol {
         if (supplier != nil) {
             record[CKItemModelName.supplier] = supplier
         }
-        if let url = imageURL {
-            let asset = CKAsset(fileURL: url)
-            record[CKItemModelName.imageURL] = asset
+        if let url1 = imageURL1 {
+            let asset1 = CKAsset(fileURL: url1)
+            record[CKItemModelName.imageURL1] = asset1
+        }
+        if let url2 = imageURL2 {
+            let asset2 = CKAsset(fileURL: url2)
+            record[CKItemModelName.imageURL2] = asset2
+        }
+        if let url3 = imageURL3 {
+            let asset3 = CKAsset(fileURL: url3)
+            record[CKItemModelName.imageURL3] = asset3
         }
         self.init(record: record)
-    }
-    
-    func update(newName: String) -> HRProduct? {
-        let record = record
-        record[CKItemModelName.name] = newName
-        return HRProduct(record: record)
     }
 }
 
