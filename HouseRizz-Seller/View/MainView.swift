@@ -20,21 +20,15 @@ struct MainView: View {
     
     @ViewBuilder
     var accountView: some View {
-        NavigationStack{
-            ZStack{
-                TabView {
-                    Group {
-                        ItemsPageView()
-                            .tabItem { Label("Items", systemImage: "list.bullet")}
-                        OrdersPageView()
-                            .tabItem { Label("Orders", systemImage: "bag") }
-                        ProfilePageView()
-                            .tabItem { Label("Profile", systemImage: "person") }
-                    }
-                }
+        TabView {
+            Group {
+                ProductsPageView()
+                    .tabItem { Label("Products", systemImage: "list.bullet")}
+                OrdersPageView()
+                    .tabItem { Label("Orders", systemImage: "bag") }
+//                ProfilePageView()
+//                    .tabItem { Label("Profile", systemImage: "person") }
             }
-            .navigationTitle("HouseRizz Seller")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
