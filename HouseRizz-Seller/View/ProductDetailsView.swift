@@ -9,15 +9,25 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     var item: HRProduct
+    private var imageUrls: [URL?] {
+        [item.imageURL1, item.imageURL2, item.imageURL3]
+    }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                if let url = item.imageURL1, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
-                    Image(uiImage: image)
-                        .resizable()
-                        .ignoresSafeArea(edges: .top)
-                        .frame(height: 300)
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(imageUrls.compactMap({ $0 }), id: \.self) { url in
+                            if let data = try? Data(contentsOf: url),
+                               let image = UIImage(data: data) {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .ignoresSafeArea(edges: .top)
+                                    .frame(width: 320, height: 300)
+                            }
+                        }
+                    }
                 }
                 
                 VStack(alignment: .leading) {
