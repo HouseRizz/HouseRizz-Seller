@@ -7,40 +7,37 @@
 
 import SwiftUI
 
-struct ItemsPageView: View {
-    @StateObject private var viewModel = ItemsPageViewModel()
+struct ProductsPageView: View {
+    @StateObject private var viewModel = ProductsPageViewModel()
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         NavigationStack {
             VStack {
-                List {
-                    ForEach(viewModel.items, id: \.self) { item in
-                        HStack {
-                            Text(item.name)
-                            
-                            if let url = item.imageURL, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .frame(width: 50,height: 50)
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(viewModel.items, id: \.self) { item in
+                            NavigationLink(destination: ProductDetailsView(item: item).toolbarRole(.editor)) {
+                                HRProductCardView(item: item)
                             }
                         }
                     }
+                    .padding()
                 }
-                .listStyle(PlainListStyle())
             }
-            .navigationTitle("\(viewModel.userName)'s Inventory")
+            .navigationTitle("\(viewModel.userName)'s Products")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        AddItemView()
+                        AddProductView()
                             .toolbarRole(.editor)
                     } label: {
                         Image(systemName: "plus.circle")
                             .imageScale(.large)
                             .bold()
                     }
-
+                    
                 }
             }
         }
@@ -48,5 +45,5 @@ struct ItemsPageView: View {
 }
 
 #Preview {
-    ItemsPageView()
+    ProductsPageView()
 }

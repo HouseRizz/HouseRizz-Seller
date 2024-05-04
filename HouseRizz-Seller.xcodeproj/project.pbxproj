@@ -25,13 +25,15 @@
 		CC3580292BE120170056E300 /* HRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3580282BE120160056E300 /* HRButton.swift */; };
 		CC35802C2BE121AC0056E300 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC35802B2BE121AC0056E300 /* GoogleService-Info.plist */; };
 		CC58D8D32BE4F7E300F873CB /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */; };
-		CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */; };
+		CC58D8D52BE4F7F900F873CB /* ProductsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D42BE4F7F900F873CB /* ProductsPageView.swift */; };
 		CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */; };
 		CC58D8D92BE5058D00F873CB /* CKUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D82BE5058D00F873CB /* CKUtility.swift */; };
-		CC58D8DB2BE508CA00F873CB /* ItemsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */; };
+		CC58D8DB2BE508CA00F873CB /* ProductsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DA2BE508CA00F873CB /* ProductsPageViewModel.swift */; };
 		CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */; };
-		CC58D8DF2BE50EE100F873CB /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddItemView.swift */; };
+		CC58D8DF2BE50EE100F873CB /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddProductView.swift */; };
 		CC58D8E12BE50F4200F873CB /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8E02BE50F4200F873CB /* AddItemViewModel.swift */; };
+		CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */; };
+		CCCE18422BE5E07900DEA45C /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,13 +51,15 @@
 		CC35802D2BE121BE0056E300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CC35802E2BE121CB0056E300 /* HouseRizz-Seller.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HouseRizz-Seller.entitlements"; sourceTree = "<group>"; };
 		CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
-		CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageView.swift; sourceTree = "<group>"; };
+		CC58D8D42BE4F7F900F873CB /* ProductsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPageView.swift; sourceTree = "<group>"; };
 		CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPageView.swift; sourceTree = "<group>"; };
 		CC58D8D82BE5058D00F873CB /* CKUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKUtility.swift; sourceTree = "<group>"; };
-		CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageViewModel.swift; sourceTree = "<group>"; };
+		CC58D8DA2BE508CA00F873CB /* ProductsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPageViewModel.swift; sourceTree = "<group>"; };
 		CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRProduct.swift; sourceTree = "<group>"; };
-		CC58D8DE2BE50EE100F873CB /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		CC58D8DE2BE50EE100F873CB /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		CC58D8E02BE50F4200F873CB /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRProductCardView.swift; sourceTree = "<group>"; };
+		CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3580092BE11EB50056E300 /* Authentication.swift */,
-				CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */,
+				CC58D8DA2BE508CA00F873CB /* ProductsPageViewModel.swift */,
 				CC58D8E02BE50F4200F873CB /* AddItemViewModel.swift */,
 			);
 			path = ViewModel;
@@ -133,10 +137,11 @@
 			children = (
 				CC3580262BE11FF40056E300 /* LoginView.swift */,
 				CC357FFC2BE11B1A0056E300 /* MainView.swift */,
+				CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */,
 				CC58D8D22BE4F7E300F873CB /* ProfilePageView.swift */,
-				CC58D8D42BE4F7F900F873CB /* ItemsPageView.swift */,
+				CC58D8D42BE4F7F900F873CB /* ProductsPageView.swift */,
 				CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */,
-				CC58D8DE2BE50EE100F873CB /* AddItemView.swift */,
+				CC58D8DE2BE50EE100F873CB /* AddProductView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3580282BE120160056E300 /* HRButton.swift */,
+				CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -251,16 +257,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC58D8D52BE4F7F900F873CB /* ItemsPageView.swift in Sources */,
+				CC58D8D52BE4F7F900F873CB /* ProductsPageView.swift in Sources */,
 				CC58D8D32BE4F7E300F873CB /* ProfilePageView.swift in Sources */,
-				CC58D8DB2BE508CA00F873CB /* ItemsPageViewModel.swift in Sources */,
+				CC58D8DB2BE508CA00F873CB /* ProductsPageViewModel.swift in Sources */,
 				CC3580272BE11FF40056E300 /* LoginView.swift in Sources */,
 				CC3580292BE120170056E300 /* HRButton.swift in Sources */,
 				CC357FFD2BE11B1A0056E300 /* MainView.swift in Sources */,
+				CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */,
 				CC3580252BE11FC30056E300 /* Extensions.swift in Sources */,
 				CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */,
 				CC3580212BE11F970056E300 /* HRUser.swift in Sources */,
-				CC58D8DF2BE50EE100F873CB /* AddItemView.swift in Sources */,
+				CCCE18422BE5E07900DEA45C /* ProductDetailsView.swift in Sources */,
+				CC58D8DF2BE50EE100F873CB /* AddProductView.swift in Sources */,
 				CC58D8E12BE50F4200F873CB /* AddItemViewModel.swift in Sources */,
 				CC357FFB2BE11B1A0056E300 /* HouseRizz_SellerApp.swift in Sources */,
 				CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */,

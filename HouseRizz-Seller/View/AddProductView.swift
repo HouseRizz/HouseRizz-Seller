@@ -8,7 +8,7 @@
 import SwiftUI
 import PhotosUI
 
-struct AddItemView: View {
+struct AddProductView: View {
     @StateObject private var viewModel = AddItemViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
     
@@ -95,5 +95,5 @@ struct AddItemView: View {
 }
 
 #Preview {
-    AddItemView()
+    AddProductView()
 }

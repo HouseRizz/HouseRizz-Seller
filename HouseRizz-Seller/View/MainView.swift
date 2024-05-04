@@ -22,8 +22,8 @@ struct MainView: View {
     var accountView: some View {
         TabView {
             Group {
-                ItemsPageView()
-                    .tabItem { Label("Items", systemImage: "list.bullet")}
+                ProductsPageView()
+                    .tabItem { Label("Products", systemImage: "list.bullet")}
                 OrdersPageView()
                     .tabItem { Label("Orders", systemImage: "bag") }
                 ProfilePageView()

@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ItemsPageViewModel: ObservableObject {
+class ProductsPageViewModel: ObservableObject {
     @Published var isSignedInToiCloud: Bool = false
     @Published var error: String = ""
     @Published var permissionStatus: Bool = false
