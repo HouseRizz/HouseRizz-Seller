@@ -57,12 +57,20 @@ struct AddProductView: View {
                         .lineLimit(2...15)
                         .textFieldStyle(.roundedBorder)
                     
-                    HStack(spacing: 20) {
-                        HStack {
-                            Text("Set Price (₹) :")
-                                                    
-                            TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
-                        }
+                    HStack {
+                        Text("Set Price (₹)")
+                        
+                        Spacer()
+                        
+                        TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 100)
+                    }
+                    
+                    HStack {
+                        Text("Set Category")
+                        
+                        Spacer()
                         
                         Picker("Category", selection: $viewModel.selectedCategory) {
                             ForEach(Category.allCases, id: \.self) {
@@ -84,7 +92,7 @@ struct AddProductView: View {
                             }
                         }
                         
-                        Text("Optional")
+                        Text("(Optional)")
                             .foregroundStyle(.gray)
                     }
                 }
