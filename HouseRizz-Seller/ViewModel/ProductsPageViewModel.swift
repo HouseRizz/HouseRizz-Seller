@@ -75,7 +75,7 @@ class ProductsPageViewModel: ObservableObject {
     func fetchItems(){
         let predicate = NSPredicate(value: true)
         let recordType = "Items"
-        CKUtility.fetch(predicate: predicate, recordType: recordType)
+        CKUtility.fetch(predicate: predicate, recordType: recordType, sortDescription: [NSSortDescriptor(key: "name", ascending: true)])
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 

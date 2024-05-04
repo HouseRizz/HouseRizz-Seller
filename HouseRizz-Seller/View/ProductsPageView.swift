@@ -24,6 +24,9 @@ struct ProductsPageView: View {
                     }
                     .padding()
                 }
+                .refreshable {
+                    viewModel.fetchItems()
+                }
             }
             .navigationTitle("\(viewModel.userName)'s Products")
             .navigationBarTitleDisplayMode(.inline)
