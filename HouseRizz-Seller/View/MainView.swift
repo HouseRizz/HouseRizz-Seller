@@ -26,8 +26,8 @@ struct MainView: View {
                     .tabItem { Label("Products", systemImage: "list.bullet")}
                 OrdersPageView()
                     .tabItem { Label("Orders", systemImage: "bag") }
-                ProfilePageView()
-                    .tabItem { Label("Profile", systemImage: "person") }
+//                ProfilePageView()
+//                    .tabItem { Label("Profile", systemImage: "person") }
             }
         }
     }
