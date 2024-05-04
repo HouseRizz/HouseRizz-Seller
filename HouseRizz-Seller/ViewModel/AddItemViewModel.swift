@@ -13,7 +13,9 @@ class AddItemViewModel: ObservableObject {
     @Published var description: String = ""
     @Published var price: Int = 0
     @Published var imageURL: String = ""
-    @Published var items: [HRSellItem] = []
+    @Published var category: String = ""
+    @Published var supplier: String = ""
+    @Published var items: [HRProduct] = []
     @Published var selectedPhotoData = [Data]()
     var cancellables = Set<AnyCancellable>()
     
@@ -31,7 +33,7 @@ class AddItemViewModel: ObservableObject {
         
         do {
             try data.write(to: url)
-            guard let newItem = HRSellItem(name: name, description: description, price: price, imageURL: url) else {return}
+            guard let newItem = HRProduct(name: name, description: description, price: price, imageURL: url, category: category, supplier: supplier) else {return}
             CKUtility.add(item: newItem) { result in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.name = ""

@@ -57,6 +57,12 @@ struct AddItemView: View {
                         .lineLimit(2...15)
                         .textFieldStyle(.roundedBorder)
                     
+                    TextField("Category", text: $viewModel.category)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    TextField("Supplier", text: $viewModel.supplier)
+                        .textFieldStyle(.roundedBorder)
+                    
                     HStack {
                         Text("Set Price (₹) :")
                                                 

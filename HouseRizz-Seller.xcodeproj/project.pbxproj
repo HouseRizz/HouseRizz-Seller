@@ -29,7 +29,7 @@
 		CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */; };
 		CC58D8D92BE5058D00F873CB /* CKUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8D82BE5058D00F873CB /* CKUtility.swift */; };
 		CC58D8DB2BE508CA00F873CB /* ItemsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */; };
-		CC58D8DD2BE50A4A00F873CB /* HRSellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRSellItem.swift */; };
+		CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */; };
 		CC58D8DF2BE50EE100F873CB /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddItemView.swift */; };
 		CC58D8E12BE50F4200F873CB /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8E02BE50F4200F873CB /* AddItemViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		CC58D8D62BE4F82300F873CB /* OrdersPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPageView.swift; sourceTree = "<group>"; };
 		CC58D8D82BE5058D00F873CB /* CKUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKUtility.swift; sourceTree = "<group>"; };
 		CC58D8DA2BE508CA00F873CB /* ItemsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPageViewModel.swift; sourceTree = "<group>"; };
-		CC58D8DC2BE50A4A00F873CB /* HRSellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSellItem.swift; sourceTree = "<group>"; };
+		CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRProduct.swift; sourceTree = "<group>"; };
 		CC58D8DE2BE50EE100F873CB /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		CC58D8E02BE50F4200F873CB /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3580202BE11F970056E300 /* HRUser.swift */,
-				CC58D8DC2BE50A4A00F873CB /* HRSellItem.swift */,
+				CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				CC58D8DF2BE50EE100F873CB /* AddItemView.swift in Sources */,
 				CC58D8E12BE50F4200F873CB /* AddItemViewModel.swift in Sources */,
 				CC357FFB2BE11B1A0056E300 /* HouseRizz_SellerApp.swift in Sources */,
-				CC58D8DD2BE50A4A00F873CB /* HRSellItem.swift in Sources */,
+				CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */,
 				CC35800A2BE11EB50056E300 /* Authentication.swift in Sources */,
 				CC58D8D92BE5058D00F873CB /* CKUtility.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ class ItemsPageViewModel: ObservableObject {
     @Published var error: String = ""
     @Published var permissionStatus: Bool = false
     @Published var userName: String = ""
-    @Published var items: [HRSellItem] = []
+    @Published var items: [HRProduct] = []
     var cancellables = Set<AnyCancellable>()
     
     init(){
