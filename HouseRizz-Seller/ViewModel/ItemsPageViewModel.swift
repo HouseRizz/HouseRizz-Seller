@@ -13,12 +13,14 @@ class ItemsPageViewModel: ObservableObject {
     @Published var error: String = ""
     @Published var permissionStatus: Bool = false
     @Published var userName: String = ""
+    @Published var items: [HRSellItem] = []
     var cancellables = Set<AnyCancellable>()
     
     init(){
         getiCloudStatus()
         requestPermission()
         getCurrentUserName()
+        fetchItems()
     }
     
     private func getiCloudStatus(){
@@ -66,6 +68,19 @@ class ItemsPageViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] success in
                 self?.userName = success
+            }
+            .store(in: &cancellables)
+    }
+    
+    func fetchItems(){
+        let predicate = NSPredicate(value: true)
+        let recordType = "Items"
+        CKUtility.fetch(predicate: predicate, recordType: recordType)
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                
+            } receiveValue: { [weak self] returnedItems in
+                self?.items = returnedItems
             }
             .store(in: &cancellables)
     }

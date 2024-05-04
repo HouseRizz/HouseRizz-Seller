@@ -13,11 +13,22 @@ struct ItemsPageView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Is Signed in: \(viewModel.isSignedInToiCloud)")
-                Text("Permission: \(viewModel.permissionStatus)")
-                Text("Name: \(viewModel.userName)")
+                List {
+                    ForEach(viewModel.items, id: \.self) { item in
+                        HStack {
+                            Text(item.name)
+                            
+                            if let url = item.imageURL, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 50,height: 50)
+                            }
+                        }
+                    }
+                }
+                .listStyle(PlainListStyle())
             }
-            .navigationTitle("Your Inventory")
+            .navigationTitle("\(viewModel.userName)'s Inventory")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
