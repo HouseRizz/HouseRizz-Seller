@@ -8,7 +8,8 @@
 import SwiftUI
 import Combine
 
-class AddItemViewModel: ObservableObject {
+class AddProductViewModel: ObservableObject {
+    @Published var error: String = ""
     @Published var name: String = ""
     @Published var description: String = ""
     @Published var price: Int = 0
@@ -18,6 +19,10 @@ class AddItemViewModel: ObservableObject {
     @Published var items: [HRProduct] = []
     @Published var selectedPhotoData = [Data]()
     var cancellables = Set<AnyCancellable>()
+    
+    init(){
+        getCurrentUserName()
+    }
     
     func addButtonPressed(){
         guard !name.isEmpty else {return}
@@ -42,5 +47,21 @@ class AddItemViewModel: ObservableObject {
         } catch let error {
             print(error)
         }
+    }
+    
+    func getCurrentUserName() {
+        CKUtility.discoverUserIdentity()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { [weak self] success in
+                self?.supplier = success
+            }
+            .store(in: &cancellables)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct AddProductView: View {
-    @StateObject private var viewModel = AddItemViewModel()
+    @StateObject private var viewModel = AddProductViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
     
     var body: some View {
@@ -59,10 +59,7 @@ struct AddProductView: View {
                     
                     TextField("Category", text: $viewModel.category)
                         .textFieldStyle(.roundedBorder)
-                    
-                    TextField("Supplier", text: $viewModel.supplier)
-                        .textFieldStyle(.roundedBorder)
-                    
+
                     HStack {
                         Text("Set Price (₹) :")
                                                 
