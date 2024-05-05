@@ -64,6 +64,17 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
             }
             
+            SignInWithAppleButton(.signIn) { request in
+                viewModel.handleSignInWithAppleRequest(request)
+            } onCompletion: { result in
+                viewModel.handleSignInWithAppleCompletion(result)
+            }
+            .frame(height: 50)
+            .frame(maxWidth: .infinity)
+            .signInWithAppleButtonStyle(.white)
+            .shadow(color: colorScheme == .dark ? Color.white.opacity(0.2) : Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+            
+            
             Spacer()
         }
         .listStyle(.plain)
