@@ -5,7 +5,13 @@
 //  Created by Krish Mittal on 04/04/24.
 //
 
-import Foundation
+import SwiftUI
+
+extension Color {
+    static let primaryColor = Color("PrimaryColor")
+    static let secondaryColor = Color("SecondaryColor")
+
+}
 
 extension Encodable {
     func asDictionary() -> [String: Any]{
