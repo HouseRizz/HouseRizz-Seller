@@ -35,6 +35,22 @@ class AddProductViewModel: ObservableObject {
         
     }
     
+    private func clearItem() {
+        error = ""
+        name = ""
+        description = ""
+        price = 0
+        imageURL1 = ""
+        imageURL2 = ""
+        imageURL3 = ""
+        category = ""
+        supplier = ""
+        items = []
+        selectedPhotoData = [Data]()
+        
+        
+    }
+    
     private func addItem(name: String) {
         guard !selectedPhotoData.isEmpty else {
             error = "Please select at least one image"
@@ -69,7 +85,7 @@ class AddProductViewModel: ObservableObject {
         
         CKUtility.add(item: newItem) { result in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.name = ""
+                self.clearItem()
             }
         }
     }

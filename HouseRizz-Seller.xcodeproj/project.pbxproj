@@ -32,6 +32,7 @@
 		CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */; };
 		CC58D8DF2BE50EE100F873CB /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddProductView.swift */; };
 		CC58D8E12BE50F4200F873CB /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8E02BE50F4200F873CB /* AddProductViewModel.swift */; };
+		CCC708B72BEA63A100DFA2B4 /* HRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */; };
 		CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */; };
 		CCCE18422BE5E07900DEA45C /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRProduct.swift; sourceTree = "<group>"; };
 		CC58D8DE2BE50EE100F873CB /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		CC58D8E02BE50F4200F873CB /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRTextField.swift; sourceTree = "<group>"; };
 		CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRProductCardView.swift; sourceTree = "<group>"; };
 		CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			children = (
 				CC3580282BE120160056E300 /* HRButton.swift */,
 				CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */,
+				CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				CC3580292BE120170056E300 /* HRButton.swift in Sources */,
 				CC357FFD2BE11B1A0056E300 /* MainView.swift in Sources */,
 				CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */,
+				CCC708B72BEA63A100DFA2B4 /* HRTextField.swift in Sources */,
 				CC3580252BE11FC30056E300 /* Extensions.swift in Sources */,
 				CC58D8D72BE4F82300F873CB /* OrdersPageView.swift in Sources */,
 				CC3580212BE11F970056E300 /* HRUser.swift in Sources */,

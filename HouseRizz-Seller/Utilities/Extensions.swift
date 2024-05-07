@@ -27,3 +27,12 @@ extension Encodable {
         }
     }
 }
+
+extension NumberFormatter {
+    static let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+}
+
