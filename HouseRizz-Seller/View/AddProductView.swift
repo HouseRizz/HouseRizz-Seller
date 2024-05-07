@@ -84,22 +84,39 @@ struct AddProductView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    TextField("Name", text: $viewModel.name)
-                        .textFieldStyle(.roundedBorder)
+                    TextField("Item Name", text: $viewModel.name)
+                        .font(.system(.title3, design: .rounded))
+                        .padding(15)
+                        .background(.white)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.gray, lineWidth: 1)
+                        )
+                    VStack(alignment:.leading) {
+                        Text("Set Price")
+                            .foregroundStyle(.gray)
+                        TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
+                            .font(.system(.title3, design: .rounded))
+                            .padding(15)
+                            .background(.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.gray, lineWidth: 1)
+                            )
+                    }
                     
                     TextField("Description", text: $viewModel.description, axis: .vertical)
                         .lineLimit(2...15)
-                        .textFieldStyle(.roundedBorder)
-                    
-                    HStack {
-                        Text("Set Price (₹)")
-                        
-                        Spacer()
-                        
-                        TextField("Price", value: $viewModel.price, formatter: NumberFormatter())
-                            .textFieldStyle(.roundedBorder)
-                            .frame(width: 100)
-                    }
+                        .font(.system(.title3, design: .rounded))
+                        .padding(15)
+                        .background(.white)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.gray, lineWidth: 1)
+                        )
                     
                     HStack {
                         Text("Set Category")
@@ -131,6 +148,8 @@ struct AddProductView: View {
                     }
                 }
                 .padding(.top,50)
+                
+                Divider()
                 
                 Spacer()
                 
