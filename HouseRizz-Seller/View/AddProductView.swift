@@ -15,38 +15,72 @@ struct AddProductView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
+                Divider()
+                
+                HStack {
+                    Text("Upload photos(0/3)")
+                        .font(.system(.subheadline, design: .rounded))
+                        .foregroundStyle(.gray)
+                    
+                    Spacer()
+                    
+                    PhotosPicker(selection: $photoPickerItems, maxSelectionCount: 3, matching: .images) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: 60,height: 40)
+                                .foregroundStyle(Color.secondaryColor)
+                            Text("Add")
+                                .font(.system(.title3, design: .rounded))
+                                .bold()
+                                .foregroundStyle(Color.primaryColor)
+                        }
+                    }
+                    .onChange(of: photoPickerItems) {
+                        Task {
+                            viewModel.selectedPhotoData.removeAll()
+                            for item in photoPickerItems {
+                                if let imageData = try await item.loadTransferable(type: Data.self) {
+                                    viewModel.selectedPhotoData.append(imageData)
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 if viewModel.selectedPhotoData.count > 0 {
                     ScrollView(.horizontal) {
                         LazyHStack {
                             ForEach(0..<viewModel.selectedPhotoData.count, id: \.self) { index in
                                 Image(uiImage: UIImage(data: viewModel.selectedPhotoData[index])!)
                                     .resizable()
-                                    .frame(width: 200, height: 200)
+                                    .frame(width: 60, height: 60)
                                     .clipShape(RoundedRectangle(cornerRadius: 5))
                             }
                         }
                     }
-                    .frame(height: 200)
+                    .cornerRadius(5)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    
                 } else {
-                    Image(systemName: "photo.stack")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .padding()
-                }
-                
-                PhotosPicker(selection: $photoPickerItems, maxSelectionCount: 3, matching: .images) {
-                    Text("Edit Photos")
-                        .padding(.top,10)
-                }
-                .onChange(of: photoPickerItems) {
-                    Task {
-                        viewModel.selectedPhotoData.removeAll()
-                        for item in photoPickerItems {
-                            if let imageData = try await item.loadTransferable(type: Data.self) {
-                                viewModel.selectedPhotoData.append(imageData)
-                            }
+                    ZStack {
+                        Color.gray.opacity(0.2)
+                        
+                        Rectangle()
+                            .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [3]))
+                        
+                        HStack {
+                            Image(systemName: "plus.circle")
+                            
+                            Text("Add Photos")
+                                .font(.system(.subheadline, design: .rounded))
                         }
                     }
+                    .foregroundStyle(.gray)
+                    .cornerRadius(5)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
                 }
                 
                 VStack(alignment: .leading, spacing: 20) {
@@ -107,6 +141,7 @@ struct AddProductView: View {
             }
             .padding()
             .navigationTitle("Add Item")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
