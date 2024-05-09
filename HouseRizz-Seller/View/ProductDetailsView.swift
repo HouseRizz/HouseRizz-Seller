@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import RealityKit
+import QuickLook
 
 struct ProductDetailsView: View {
     var item: HRProduct
@@ -51,11 +53,18 @@ struct ProductDetailsView: View {
                     }
                     .padding(.vertical)
                     
+                    if let modelURL = item.modelURL, let modelData = try? Data(contentsOf: modelURL) {
+                        Text("\(modelData)")
+                    }
+                    
+                    
                     Text("Description")
                         .font(.title3)
                         .fontWeight(.medium)
                     
                     Text(item.description ?? "")
+                    
+                    
                     
                     Spacer()
                 }
@@ -68,3 +77,20 @@ struct ProductDetailsView: View {
         .ignoresSafeArea(edges: .top)
     }
 }
+
+//struct ModelView: UIViewRepresentable {
+//    let modelData: Data
+//    
+//    func makeUIView(context: Context) -> ARView {
+//        let arView = ARView(frame: .zero)
+//        let scene = try? ProductExperience.loadScene()
+//        
+//        if let scene = scene {
+//            arView.scene.anchors.append(scene)
+//        }
+//        
+//        return arView
+//    }
+//    
+//    func updateUIView(_ uiView: ARView, context: Context) {}
+//}

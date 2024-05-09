@@ -30,7 +30,7 @@ struct HRProduct: Hashable, CKitableProtocol {
     let imageURL1: URL?
     let imageURL2: URL?
     let imageURL3: URL?
-    //let modelURL: URL?
+    let modelURL: URL?
     let record: CKRecord
     
     init?(record: CKRecord){
@@ -50,12 +50,12 @@ struct HRProduct: Hashable, CKitableProtocol {
         self.imageURL2 = imageAsset2?.fileURL
         let imageAsset3 = record[CKItemModelName.imageURL3] as? CKAsset
         self.imageURL3 = imageAsset3?.fileURL
-//        let modelURL = record[CKItemModelName.modelURL] as? CKAsset
-//        self.modelURL = modelURL?.fileURL
+        let modelURL = record[CKItemModelName.modelURL] as? CKAsset
+        self.modelURL = modelURL?.fileURL
         self.record = record
     }
     
-    init?(name: String, description: String?, price: Int?, imageURL1: URL?, imageURL2: URL?, imageURL3: URL?, category: String?, supplier: String?) {
+    init?(name: String, description: String?, price: Int?, imageURL1: URL?, imageURL2: URL?, imageURL3: URL?,  modelURL: URL?, category: String?, supplier: String?) {
         let record = CKRecord(recordType: CKItemModelName.itemRecord)
         record[CKItemModelName.name] = name
         record[CKItemModelName.description] = description
@@ -78,6 +78,10 @@ struct HRProduct: Hashable, CKitableProtocol {
             let asset3 = CKAsset(fileURL: url3)
             record[CKItemModelName.imageURL3] = asset3
         }
+        if let modelURL = modelURL {
+            let modelAsset = CKAsset(fileURL: modelURL)
+            record[CKItemModelName.modelURL] = modelAsset
+        }
         self.init(record: record)
     }
 }
@@ -89,7 +93,7 @@ enum Category: CaseIterable {
     case tv
     
     var id: Self { self }
-        
+    
     var title: String {
         switch self {
         case .sofa:
