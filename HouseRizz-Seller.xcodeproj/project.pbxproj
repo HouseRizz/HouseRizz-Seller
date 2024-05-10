@@ -32,7 +32,6 @@
 		CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */; };
 		CC58D8DF2BE50EE100F873CB /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddProductView.swift */; };
 		CC58D8E12BE50F4200F873CB /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8E02BE50F4200F873CB /* AddProductViewModel.swift */; };
-		CCABFF842BEB7A0A00815E6C /* USDZScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CCABFF832BEB7A0A00815E6C /* USDZScanner */; };
 		CCABFF862BEB7C2800815E6C /* redchair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CCABFF852BEB7C2800815E6C /* redchair.usdz */; };
 		CCC708B72BEA63A100DFA2B4 /* HRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */; };
 		CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */; };
@@ -75,7 +74,6 @@
 				CC3580112BE11F2D0056E300 /* FirebaseDatabaseSwift in Frameworks */,
 				CC3580132BE11F2D0056E300 /* FirebaseFirestore in Frameworks */,
 				CC35801A2BE11F4C0056E300 /* GoogleSignInSwift in Frameworks */,
-				CCABFF842BEB7A0A00815E6C /* USDZScanner in Frameworks */,
 				CC35800F2BE11F2D0056E300 /* FirebaseDatabase in Frameworks */,
 				CC3580152BE11F2D0056E300 /* FirebaseStorage in Frameworks */,
 				CC35800D2BE11F2D0056E300 /* FirebaseAuth in Frameworks */,
@@ -205,7 +203,6 @@
 				CC3580142BE11F2D0056E300 /* FirebaseStorage */,
 				CC3580172BE11F4C0056E300 /* GoogleSignIn */,
 				CC3580192BE11F4C0056E300 /* GoogleSignInSwift */,
-				CCABFF832BEB7A0A00815E6C /* USDZScanner */,
 			);
 			productName = "HouseRizz-Seller";
 			productReference = CC357FF72BE11B1A0056E300 /* HouseRizz-Seller.app */;
@@ -558,11 +555,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC3580162BE11F4C0056E300 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
-		};
-		CCABFF832BEB7A0A00815E6C /* USDZScanner */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCABFF822BEB7A0A00815E6C /* XCRemoteSwiftPackageReference "USDZScanner" */;
-			productName = USDZScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
