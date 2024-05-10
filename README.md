@@ -24,5 +24,5 @@ This the Seller app for [HouseRizz](https://houserizz-com.vercel.app) a tool tha
 ## Screenshots
 
 | Inventory | Delete | Add | Add Product |
-|---|---|---|
+|---|---|---|---|
 | <img src="https://github.com/krishmittal21/HouseRizz-Seller/blob/main/Screenshots/inventory.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/HouseRizz-Seller/blob/main/Screenshots/delete.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/HouseRizz-Seller/blob/main/Screenshots/add.png" width="200" height="400"> | <img src="https://github.com/krishmittal21/HouseRizz-Seller/blob/main/Screenshots/addp.png" width="200" height="400"> | 
