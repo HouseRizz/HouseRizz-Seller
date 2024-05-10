@@ -32,6 +32,7 @@
 		CC58D8DD2BE50A4A00F873CB /* HRProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */; };
 		CC58D8DF2BE50EE100F873CB /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8DE2BE50EE100F873CB /* AddProductView.swift */; };
 		CC58D8E12BE50F4200F873CB /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC58D8E02BE50F4200F873CB /* AddProductViewModel.swift */; };
+		CCABFF862BEB7C2800815E6C /* redchair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = CCABFF852BEB7C2800815E6C /* redchair.usdz */; };
 		CCC708B72BEA63A100DFA2B4 /* HRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */; };
 		CCCE18402BE5DE9600DEA45C /* HRProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */; };
 		CCCE18422BE5E07900DEA45C /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */; };
@@ -59,6 +60,7 @@
 		CC58D8DC2BE50A4A00F873CB /* HRProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRProduct.swift; sourceTree = "<group>"; };
 		CC58D8DE2BE50EE100F873CB /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		CC58D8E02BE50F4200F873CB /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		CCABFF852BEB7C2800815E6C /* redchair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = redchair.usdz; sourceTree = "<group>"; };
 		CCC708B62BEA63A100DFA2B4 /* HRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRTextField.swift; sourceTree = "<group>"; };
 		CCCE183F2BE5DE9600DEA45C /* HRProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRProductCardView.swift; sourceTree = "<group>"; };
 		CCCE18412BE5E07900DEA45C /* ProductDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		CC357FF92BE11B1A0056E300 /* HouseRizz-Seller */ = {
 			isa = PBXGroup;
 			children = (
+				CCABFF852BEB7C2800815E6C /* redchair.usdz */,
 				CC35802E2BE121CB0056E300 /* HouseRizz-Seller.entitlements */,
 				CC35802D2BE121BE0056E300 /* Info.plist */,
 				CC35802B2BE121AC0056E300 /* GoogleService-Info.plist */,
@@ -232,6 +235,7 @@
 			packageReferences = (
 				CC35800B2BE11F2D0056E300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CC3580162BE11F4C0056E300 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				CCABFF822BEB7A0A00815E6C /* XCRemoteSwiftPackageReference "USDZScanner" */,
 			);
 			productRefGroup = CC357FF82BE11B1A0056E300 /* Products */;
 			projectDirPath = "";
@@ -250,6 +254,7 @@
 				CC3580022BE11B1C0056E300 /* Preview Assets.xcassets in Resources */,
 				CC357FFF2BE11B1C0056E300 /* Assets.xcassets in Resources */,
 				CC35802C2BE121AC0056E300 /* GoogleService-Info.plist in Resources */,
+				CCABFF862BEB7C2800815E6C /* redchair.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +508,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.1.0;
+			};
+		};
+		CCABFF822BEB7A0A00815E6C /* XCRemoteSwiftPackageReference "USDZScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/USDZScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

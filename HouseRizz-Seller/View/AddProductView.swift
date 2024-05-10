@@ -11,6 +11,10 @@ import PhotosUI
 struct AddProductView: View {
     @StateObject private var viewModel = AddProductViewModel()
     @State private var photoPickerItems = [PhotosPickerItem]()
+    @State private var showFilePicker = false
+    @State private var tempFileURL: URL?
+    
+
     
     var body: some View {
         NavigationStack {
@@ -80,6 +84,7 @@ struct AddProductView: View {
                         }
                         
                         VStack(alignment: .leading, spacing: 20) {
+                            
                             HRTextField(text: $viewModel.name, title: "Item Name")
                                 .padding(.top,10)
 
@@ -91,7 +96,6 @@ struct AddProductView: View {
                                 TextField("Price", value: $viewModel.price, formatter: NumberFormatter.currencyFormatter)
                                     .font(.system(.title3, design: .rounded))
                                     .padding(15)
-                                    .background(.white)
                                     .cornerRadius(10)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 10)
@@ -120,16 +124,20 @@ struct AddProductView: View {
                                     
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 15)
-                                            .frame(width: 130,height: 40)
+                                            .frame(width: 140,height: 40)
                                             .foregroundStyle(Color.secondaryColor)
                                         Button {
-                                            
+                                            showFilePicker.toggle()
                                         } label: {
-                                            Text("Make Model")
+                                            Text("Upload Model")
                                                 .font(.system(.title3, design: .rounded))
                                                 .bold()
                                                 .foregroundStyle(Color.primaryColor)
                                         }
+                                        .fileImporter(isPresented: $showFilePicker, allowedContentTypes: [.usdz]) { result in
+                                            viewModel.loadUSDZFile(from: result)
+                                        }
+                                        
                                     }
                                 }
                             }

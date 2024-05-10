@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import RealityKit
 
 class AddProductViewModel: ObservableObject {
     @Published var error: String = ""
@@ -16,6 +17,7 @@ class AddProductViewModel: ObservableObject {
     @Published var imageURL1: String = ""
     @Published var imageURL2: String = ""
     @Published var imageURL3: String = ""
+    @Published var modelURL: URL?
     @Published var category: String = ""
     @Published var selectedCategory: Category = .sofa
     @Published var supplier: String = ""
@@ -47,8 +49,6 @@ class AddProductViewModel: ObservableObject {
         supplier = ""
         items = []
         selectedPhotoData = [Data]()
-        
-        
     }
     
     private func addItem(name: String) {
@@ -64,7 +64,6 @@ class AddProductViewModel: ObservableObject {
                                 .urls(for: .cachesDirectory, in: .userDomainMask)
                                 .first?.appendingPathComponent("photo\(index + 1).jpg"),
                   let data = image.jpegData(compressionQuality: 1.0) else { continue }
-            
             do {
                 try data.write(to: url)
                 urls.append(url)
@@ -73,12 +72,7 @@ class AddProductViewModel: ObservableObject {
             }
         }
         
-        if !errors.isEmpty {
-            error = errors.map { $0.localizedDescription }.joined(separator: "\n")
-            return
-        }
-        
-        guard let newItem = HRProduct(name: name, description: description, price: price, imageURL1: urls.count > 0 ? urls[0] : nil, imageURL2: urls.count > 1 ? urls[1] : nil, imageURL3: urls.count > 2 ? urls[2] : nil, category: selectedCategory.title, supplier: supplier) else {
+        guard let newItem = HRProduct(name: name, description: description, price: price, imageURL1: urls.count > 0 ? urls[0] : nil, imageURL2: urls.count > 1 ? urls[1] : nil, imageURL3: urls.count > 2 ? urls[2] : nil, modelURL: modelURL, category: selectedCategory.title, supplier: supplier) else {
             error = "Error creating item"
             return
         }
@@ -88,6 +82,27 @@ class AddProductViewModel: ObservableObject {
                 self.clearItem()
             }
         }
+    }
+    
+    func loadUSDZFile(from result: Result<URL, Error>) {
+        do {
+            let fileURL = try result.get()
+            try fileURL.startAccessingSecurityScopedResource()
+            let tempFileURL = try createTempFileURL(from: fileURL)
+            self.modelURL = tempFileURL
+            fileURL.stopAccessingSecurityScopedResource()
+        } catch {
+            print("Unable to load USDZ file: \(error.localizedDescription)")
+        }
+    }
+
+    func createTempFileURL(from fileURL: URL) throws -> URL {
+        let tempDirectoryURL = FileManager.default.temporaryDirectory
+        let tempFileName = UUID().uuidString + ".usdz"
+        let modelURL = tempDirectoryURL.appendingPathComponent(tempFileName)
+
+        try FileManager.default.copyItem(at: fileURL, to: modelURL)
+        return modelURL
     }
     
     func getCurrentUserName() {
