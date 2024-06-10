@@ -1,6 +1,5 @@
 # HouseRizz Seller iOS App
-This project is Archieved as the Seller Side has been merged in the previous buyer app, now the only app. [GitHub Link](https://github.com/krishmittal21/HouseRizz-iOS)
-This the Seller app for [HouseRizz](https://houserizz-com.vercel.app) a tool that lets you Redesign your home with  AI & AR. 
+This project is Archieved as the Seller Side has been merged in the buyer app, now the only app. [GitHub Link](https://github.com/krishmittal21/HouseRizz-iOS)
 
 <p align="center">
     <img src="https://developer.apple.com/assets/elements/icons/swift/swift-96x96_2x.png" alt="Swift5" width="48" height="48">&nbsp;&nbsp;&nbsp;
